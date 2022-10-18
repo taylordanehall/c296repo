@@ -1,2 +1,2 @@
 # c296repo
-Repository for cohort 296 at wiley edge
+Repository for scripts for cohort 296 at wiley edge
