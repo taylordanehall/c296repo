@@ -8,3 +8,12 @@ cParam () {
 	fi
 }
 
+filexist () {
+	FILE="${PWD}/${1}"
+	if [ -f $FILE ];then
+		echo "$1 exists"
+	else
+		touch $FILE
+	fi
+}
+
