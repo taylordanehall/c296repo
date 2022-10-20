@@ -2,6 +2,8 @@
 #Taylor Hall, 2022
 
 . /home/ec2-user/c296repo/functions.sh
+. /home/ec2-user/c296repo/Scripts/activity6/act6_functions.sh
+
 par=$#
 cParam $par 2
 ARR=($1 $2)
@@ -22,3 +24,5 @@ elif [ ${ARR[0]} -gt ${ARR[1]} ];then
 else
         echo "${ARR[0]} is equal to ${ARR[1]}"
 fi
+
+diff $1 $2
