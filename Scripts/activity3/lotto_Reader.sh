@@ -21,7 +21,7 @@ while [ $CHECK -eq 1 ];do
 	done
 done
 
-if [ "$LOTTO_NUM" = "${USER_IN// /}" ];then
+if [ "${LOTTO_NUM// /}" = "${USER_IN// /}" ];then
 	echo "You win!"
 else
 	echo "You looose"

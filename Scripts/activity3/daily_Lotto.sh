@@ -10,10 +10,5 @@ fi
 touch $OUTPUT
 set -o errexit
 
-for i in {1..5}
-do
-	NUMBER=$((1 + $RANDOM % 50))
-	echo -n "$NUMBER" >> $OUTPUT
-done
-
-echo -n "$((1 + $RANDOM % 10))" >> $OUTPUT
+echo -n `shuf -i 1-50 -n 5` >> $OUTPUT
+echo -n " `shuf -i 1-10 -n 1`" >> $OUTPUT
