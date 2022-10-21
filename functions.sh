@@ -17,3 +17,12 @@ filexist () {
 	fi
 }
 
+doesCont () {
+	echo $1 | grep -q $2
+	G=$?
+	if [ $G -eq 0 ];then
+		return 0
+        else
+		return 1
+	fi 
+}

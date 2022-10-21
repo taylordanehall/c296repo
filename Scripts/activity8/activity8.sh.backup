@@ -1,0 +1,36 @@
+#! /bin/sh
+#Taylor Hall, 2022
+
+NUMS=()
+PRD=1
+SUM=0
+MAX=0
+MIN=2147483647
+
+while [ ${NUMS[@]} -le 10 ];do
+	if [ ${NUMS[@]} -ge 5 ];then
+		echo -n "Do you want to stop? y/n "
+		read USER_IN
+		if [ "$USER_IN" = "y" ];then
+			break
+		fi
+	fi
+	echo -n "Enter a number: "
+	read USER_IN
+	NUMS+=($USER_IN)
+done
+
+for i in ${NUMS[@]};do
+	SUM=$(($SUM+$i))
+	PRD=$(($PRD*$i))
+	test $i -gt $MAX && MAX=$i
+	test $i -lt $MIN && MIN=$i
+done
+AVG=$(bc <<< "scale=2;$SUM/${#NUMS[@]}")
+echo "
+NUM: ${NUMS[@]}
+PRD: $PRD
+SUM: $SUM
+AVG: $AVG
+MIN: $MIN
+MAX: $MAX"
